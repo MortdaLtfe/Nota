@@ -29,7 +29,40 @@ class EditNoteController {
   }
 
   onDelete() {
-    context.read<NoteBloc>().add(NoteDeleteRequest(id: note.id));
-    Navigator.pop(context);
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text(
+                "Delete Note?",
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineLarge!
+                    .copyWith(fontSize: 30),
+              ),
+              backgroundColor: Color(0xff1f1f1f),
+              content: const Text("Are you sure you want to delete this note?"),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Cancel",
+                        style: Theme.of(context).textTheme.bodyMedium)),
+                TextButton(
+                    onPressed: () {
+                      context
+                          .read<NoteBloc>()
+                          .add(NoteDeleteRequest(id: note.id));
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      "Delete",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Colors.red,
+                          ),
+                    ))
+              ],
+            ));
   }
 }
