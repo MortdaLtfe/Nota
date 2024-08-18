@@ -71,7 +71,24 @@ class _NoteViewState extends State<NoteView> {
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Text(
-                  "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inMinutes} Minutes Ago",
+                  DateTime.now()
+                              .difference(DateTime.parse(widget.note.updatedAt))
+                              .inMinutes <
+                          0
+                      ? "Just now"
+                      : DateTime.now()
+                                  .difference(
+                                      DateTime.parse(widget.note.updatedAt))
+                                  .inMinutes >
+                              60
+                          ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inHours} hours ago"
+                          : DateTime.now()
+                                      .difference(
+                                          DateTime.parse(widget.note.updatedAt))
+                                      .inHours >
+                                  24
+                              ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inDays} days ago"
+                              : "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inMinutes} minutes ago",
                   style: Theme.of(context).textTheme.bodySmall,
                   textAlign: TextAlign.right,
                 ),
