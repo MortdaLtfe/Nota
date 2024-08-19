@@ -1,7 +1,7 @@
 name: nota
 description: "Unlock the power of organized thoughts with Nota, the sleek and intuitive note-taking app designed for simplicity and efficiency. Whether you're jotting down quick ideas, drafting detailed notes, or organizing your to-do lists, Nota is your go-to app for capturing and managing your thoughts seamlessly."
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=3.4.4 <4.0.0"

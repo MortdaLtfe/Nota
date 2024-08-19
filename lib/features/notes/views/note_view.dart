@@ -74,7 +74,7 @@ class _NoteViewState extends State<NoteView> {
                   DateTime.now()
                               .difference(DateTime.parse(widget.note.updatedAt))
                               .inMinutes <
-                          0
+                          1
                       ? "Just now"
                       : DateTime.now()
                                   .difference(

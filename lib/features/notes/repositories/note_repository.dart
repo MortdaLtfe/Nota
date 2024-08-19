@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:nota/features/notes/note.dart';
 import 'package:nota/features/notes/providers/note_provider.dart';
 
