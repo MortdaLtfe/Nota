@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logger/logger.dart';
 import 'package:nota/features/notes/note.dart';
 import 'package:nota/features/notes/repositories/note_repository.dart';
 part 'note_event.dart';
 part 'note_state.dart';
 
 class NoteBloc extends Bloc<NoteEvent, NoteState> {
-  NoteRepository noteRepository;
+  final NoteRepository noteRepository;
+  final Logger _logger = Logger();
   NoteBloc({required this.noteRepository}) : super(NoteInitial()) {
     on<FetchNotes>((event, emit) async {
       emit(NoteLoading());
@@ -49,19 +51,18 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
   @override
   void onChange(Change<NoteState> change) {
     super.onChange(change);
-    print("Errror $change");
+    _logger.d(change);
   }
 
   @override
   void onError(Object error, StackTrace stackTrace) {
-    // TODO: implement onError
     super.onError(error, stackTrace);
-    print("ERrrrror $error $stackTrace");
+    _logger.e(error);
   }
 
   @override
   void onTransition(Transition<NoteEvent, NoteState> transition) {
-    print(transition.event.toString());
     super.onTransition(transition);
+    _logger.d(transition);
   }
 }
