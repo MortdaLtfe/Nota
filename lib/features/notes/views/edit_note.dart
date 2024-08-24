@@ -42,15 +42,20 @@ class _EditNoteState extends State<EditNote> {
               const IconThemeData(color: Colors.white54, size: 28),
           iconTheme: const IconThemeData(color: Colors.white54),
           backgroundColor: const Color(0xff1f1f1f),
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios_new_outlined,
+          leading: Row(children: [
+            IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios_new_outlined,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+          ]),
+          title: Text(
+            "Edit Note",
+            style: Theme.of(context).textTheme.headlineSmall,
           ),
-          title: const Text("Edit Note"),
           actions: [
             IconButton(
               icon: const Icon(Icons.save),

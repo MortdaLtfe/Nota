@@ -67,15 +67,6 @@ class _AddNoteState extends State<AddNote> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Text(widget.,
-              //     style: TextStyle(
-              //       color: Colors.white60,
-              //       fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize,
-              //       fontFamily:
-              //           Theme.of(context).textTheme.bodyMedium?.fontFamily,
-              //       fontWeight:
-              //           Theme.of(context).textTheme.bodyMedium?.fontWeight,
-              //     )),
               const SizedBox(
                 height: 20,
               ),
