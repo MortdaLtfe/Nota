@@ -7,43 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:546429339550:android:86ccc57ceb781ea482388f",
-        "android_client_info": {
-          "package_name": "com.example.side"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "546429339550-lp8skl1b56i8854v1up48gr0hl8ppsg4.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD3H2gLL-ccWoa8tyHMpSUCGOT0a-BEkDs"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "546429339550-lp8skl1b56i8854v1up48gr0hl8ppsg4.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "546429339550-099aaqt66td5o52p45dk6c7v8kvkcmov.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.ex"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:546429339550:android:5933f982e137ad3882388f",
+        "mobilesdk_app_id": "1:546429339550:android:7b8f28e4fd109d8482388f",
         "android_client_info": {
           "package_name": "com.nota.nota"
         }

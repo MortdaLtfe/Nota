@@ -48,12 +48,6 @@ class _NoteViewState extends State<NoteView> {
                       color: Colors.white60),
                 ),
               ),
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: const Icon(Icons.ios_share_outlined),
-              //   color: Colors.white60,
-              // )
-
               Text(
                 widget.note.title,
                 style: Theme.of(context).textTheme.headlineSmall,
@@ -79,16 +73,22 @@ class _NoteViewState extends State<NoteView> {
                       : DateTime.now()
                                   .difference(
                                       DateTime.parse(widget.note.updatedAt))
-                                  .inMinutes >
+                                  .inMinutes <
                               60
-                          ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inHours} hours ago"
+                          ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inMinutes} minutes ago"
                           : DateTime.now()
                                       .difference(
                                           DateTime.parse(widget.note.updatedAt))
-                                      .inHours >
-                                  24
-                              ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inDays} days ago"
-                              : "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inMinutes} minutes ago",
+                                      .inMinutes <
+                                  60
+                              ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inMinutes} minutes ago"
+                              : DateTime.now()
+                                          .difference(DateTime.parse(
+                                              widget.note.updatedAt))
+                                          .inHours <
+                                      24
+                                  ? "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inHours} hours ago"
+                                  : "${DateTime.now().difference(DateTime.parse(widget.note.updatedAt)).inDays} days ago",
                   style: Theme.of(context).textTheme.bodySmall,
                   textAlign: TextAlign.right,
                 ),

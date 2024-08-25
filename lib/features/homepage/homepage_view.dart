@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nota/features/notes/bloc/note_bloc.dart';
 import 'package:nota/features/notes/views/add_note.dart';
 import 'package:nota/features/notes/views/note_list_view.dart';
+import 'package:nota/features/settings/settings_view.dart';
 import 'package:nota/shared/widgets/search.dart';
 import 'package:nota/utils/constants/styles.dart';
 
@@ -64,6 +65,15 @@ class _HomepageState extends State<Homepage> {
                         "Hello,\nMy Notes ",
                         style: Theme.of(context).textTheme.headlineLarge,
                       ),
+                      IconButton(
+                          onPressed: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => const SettingsView(),
+                                ),
+                              ),
+                          iconSize: 40,
+                          color: Colors.white,
+                          icon: const Icon(Icons.settings_outlined))
                     ],
                   ),
                 ),
