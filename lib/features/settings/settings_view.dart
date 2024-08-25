@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
+import 'package:nota/features/about/about_view.dart';
 import 'package:nota/features/authentication/cubit/authentication_cubit.dart';
 import 'package:nota/features/backup/views/backup_view.dart';
 import 'package:nota/features/profile/views/profile_view.dart';
@@ -95,13 +96,8 @@ class SettingsList extends StatelessWidget {
       {
         "title": "About",
         "icon": Icons.group,
-        "onTap": () {},
-        "authenticated": false
-      },
-      {
-        "title": "Version",
-        "icon": Icons.numbers_outlined,
-        "onTap": () {},
+        "onTap": () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const AboutView())),
         "authenticated": false
       },
       {
